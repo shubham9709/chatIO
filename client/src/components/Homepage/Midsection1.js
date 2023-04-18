@@ -127,10 +127,7 @@ export const Midsection = () => {
             hidden: { opacity: 0, scale: 0 },
           }}
         >
-          <img
-            src={whatsappChat}
-            style={{ width: "60%", borderRadius: "30px" }}
-          />
+          <img src={whats2} style={{ width: "60%", borderRadius: "30px" }} />
         </motion.div>
         <motion.div
           style={{

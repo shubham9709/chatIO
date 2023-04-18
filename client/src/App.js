@@ -1,7 +1,7 @@
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import Join from "./components/Join";
-import Chats from "./components/Chats";
+import Chats from "./components/chats/Chats";
 import HomePage from "./components/Homepage/HomePage";
 function App() {
   return (

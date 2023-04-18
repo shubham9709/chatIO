@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 // import { makeStyles } from "@material-ui/core"
 import { makeStyles } from "@mui/styles";
 import { Box, Typography } from "@mui/material";
+import Login from "../Login";
+import { motion } from "framer-motion";
 
 const useStyles = makeStyles({
   icon: {
@@ -32,15 +34,19 @@ const useStyles = makeStyles({
 
 const Header = () => {
   const classes = useStyles();
+  const [open, setOpen] = useState(false);
+  const handleClick = () => {
+    setOpen(true);
+  };
   return (
     <Box className={classes.mainDiv}>
-      <Box className={classes.logoDiv}>
+      <motion.Box className={classes.logoDiv} whileHover={{ scale: 1.1 }}>
         <WhatsAppIcon fontSize="large" className={classes.icon} />
         <Typography variant="h5" className={classes.text}>
           chat&nbsp;IO
         </Typography>
-      </Box>
-      <Box style={{ display: "flex", position: "relative", left: "70%" }}>
+      </motion.Box>
+      <Box style={{ display: "flex", position: "relative", left: "65%" }}>
         <Typography style={{ padding: "1rem 2rem 0 0", cursor: "pointer" }}>
           Get Started
         </Typography>
@@ -50,7 +56,14 @@ const Header = () => {
         <Typography style={{ padding: "1rem 2rem 0 0", cursor: "pointer" }}>
           Contact Us
         </Typography>
+        <Typography
+          style={{ padding: "1rem 2rem 0 0", cursor: "pointer" }}
+          onClick={handleClick}
+        >
+          Log In
+        </Typography>
       </Box>
+      {open && <Login open={open} setOpen={setOpen} />}
     </Box>
   );
 };

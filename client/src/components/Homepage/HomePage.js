@@ -13,6 +13,7 @@ const useStyles = makeStyles({
 
 const HomePage = () => {
   const classes = useStyles();
+
   return (
     <div className={classes.home}>
       <Header />
